@@ -24,18 +24,18 @@
 
   #body { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 66px); }
 
-  /* FORM PANEL — wider for tablet touch */
-  #form-panel { width: 310px; min-width: 280px; background: #fff; border-right: 2px solid #c8e6c9; padding: 16px 16px; overflow-y: auto; flex-shrink: 0; -webkit-overflow-scrolling: touch; }
-  .section-head { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #2e7d32; border-bottom: 1.5px solid #c8e6c9; padding-bottom: 5px; margin-bottom: 10px; margin-top: 18px; }
+  /* FORM PANEL — scaled for tablet */
+  #form-panel { width: 200px; min-width: 182px; background: #fff; border-right: 2px solid #c8e6c9; padding: 10px 10px; overflow-y: auto; flex-shrink: 0; -webkit-overflow-scrolling: touch; }
+  .section-head { font-size: 7px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #2e7d32; border-bottom: 1.5px solid #c8e6c9; padding-bottom: 3px; margin-bottom: 6px; margin-top: 12px; }
   .section-head:first-child { margin-top: 0; }
-  .field { margin-bottom: 10px; }
-  .field label.field-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #555; margin-bottom: 4px; }
-  select, input[type="text"], input[type="number"] { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #c8e6c9; background: #f9fdf9; font-size: 15px; color: #111; font-family: inherit; cursor: pointer; -webkit-appearance: none; appearance: none; }
-  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+  .field { margin-bottom: 6px; }
+  .field label.field-label { display: block; font-size: 7px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #555; margin-bottom: 3px; }
+  select, input[type="text"], input[type="number"] { width: 100%; padding: 6px 8px; border-radius: 5px; border: 1.5px solid #c8e6c9; background: #f9fdf9; font-size: 10px; color: #111; font-family: inherit; cursor: pointer; -webkit-appearance: none; appearance: none; }
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23555' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; padding-right: 24px; }
   select:focus, input:focus { outline: 2px solid #2e7d32; border-color: #2e7d32; }
-  .check-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; cursor: pointer; font-size: 15px; color: #111; user-select: none; min-height: 36px; }
-  .check-row input[type="checkbox"] { width: 22px; height: 22px; accent-color: #2e7d32; cursor: pointer; flex-shrink: 0; }
-  .indent { padding-left: 14px; margin-top: 4px; margin-bottom: 6px; }
+  .check-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; cursor: pointer; font-size: 10px; color: #111; user-select: none; min-height: 24px; }
+  .check-row input[type="checkbox"] { width: 14px; height: 14px; accent-color: #2e7d32; cursor: pointer; flex-shrink: 0; }
+  .indent { padding-left: 9px; margin-top: 3px; margin-bottom: 4px; }
 
   /* RIGHT PANEL */
   #right-panel { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
@@ -162,7 +162,7 @@
       <label class="field-label">Rooms to Pack</label>
       <select id="partialRooms" onchange="syncPartialRoomsOther();render()"><option>Kitchen</option><option>Closets</option><option>Other</option></select>
       <div id="partialRoomsOtherOpts" style="display:none;margin-top:6px;">
-        <input type="text" id="partialRoomsOther" placeholder="Specify rooms..." oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+        <input type="text" id="partialRoomsOther" placeholder="Specify rooms..." oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
     </div>
     <label class="check-row"><input type="checkbox" id="unpacking"> Unpacking Included</label>
@@ -171,9 +171,9 @@
     <label class="check-row"><input type="checkbox" id="fullMove"> Full Move</label>
     <label class="check-row"><input type="checkbox" id="laborOnly" onchange="syncLaborOnly()"> Labor Only</label>
     <div class="indent" id="laborOnlyOpts" style="display:none;margin-top:2px;margin-bottom:4px;">
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="laborLoading" onchange="render()"> Loading</label>
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="laborUnloading" onchange="render()"> Unloading</label>
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="laborPacking" onchange="render()"> Packing</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="laborLoading" onchange="render()"> Loading</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="laborUnloading" onchange="render()"> Unloading</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="laborPacking" onchange="render()"> Packing</label>
     </div>
     <label class="check-row"><input type="checkbox" id="partialMove"> Partial Move</label>
     <label class="check-row"><input type="checkbox" id="furnitureOnly"> Furniture Only</label>
@@ -187,27 +187,27 @@
     <label class="check-row"><input type="checkbox" id="multidayMove" onchange="syncMultidayMove()"> Multiday Move</label>
     <div id="multidayOpts" style="display:none;margin-top:6px;margin-bottom:12px;">
       <label class="field-label">Number of Days</label>
-      <input type="number" id="multidayDays" value="2" min="2" max="7" onchange="updateMultidayBoxes()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+      <input type="number" id="multidayDays" value="2" min="2" max="7" onchange="updateMultidayBoxes()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       <div id="multidayBoxes" style="margin-top:10px;"></div>
     </div>
     <label class="check-row"><input type="checkbox" id="roomsNotMoving" onchange="syncRoomsNotMoving()"> Rooms Not Moving</label>
     <div id="roomsNotMovingOpts" style="display:none;margin-top:4px;margin-bottom:12px;">
       <div class="indent">
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmMasterBedroom" onchange="render()"> Master Bedroom</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmBedroom2" onchange="render()"> Bedroom 2</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmBedroom3" onchange="render()"> Bedroom 3</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmBedroom4" onchange="render()"> Bedroom 4</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmKitchen" onchange="render()"> Kitchen</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmLivingRoom" onchange="render()"> Living Room</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmDiningRoom" onchange="render()"> Dining Room</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmOffice" onchange="render()"> Office</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmGarage" onchange="render()"> Garage</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmPatio" onchange="render()"> Patio</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmAttic" onchange="render()"> Attic</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmBasement" onchange="render()"> Basement</label>
-        <label class="check-row" style="font-size:14px;"><input type="checkbox" id="rnmOther" onchange="syncRnmOther()"> Other</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmMasterBedroom" onchange="render()"> Master Bedroom</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmBedroom2" onchange="render()"> Bedroom 2</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmBedroom3" onchange="render()"> Bedroom 3</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmBedroom4" onchange="render()"> Bedroom 4</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmKitchen" onchange="render()"> Kitchen</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmLivingRoom" onchange="render()"> Living Room</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmDiningRoom" onchange="render()"> Dining Room</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmOffice" onchange="render()"> Office</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmGarage" onchange="render()"> Garage</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmPatio" onchange="render()"> Patio</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmAttic" onchange="render()"> Attic</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmBasement" onchange="render()"> Basement</label>
+        <label class="check-row" style="font-size:9px;"><input type="checkbox" id="rnmOther" onchange="syncRnmOther()"> Other</label>
         <div id="rnmOtherInput" style="display:none;margin-top:3px;">
-          <input type="text" id="rnmOtherText" placeholder="Specify rooms..." oninput="render()" style="width:100%;font-size:14px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;font-family:inherit;">
+          <input type="text" id="rnmOtherText" placeholder="Specify rooms..." oninput="render()" style="width:100%;font-size:9px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
         </div>
       </div>
     </div>
@@ -216,8 +216,8 @@
     <label class="check-row"><input type="checkbox" id="trucksToCapacity"> Truck(s) to Capacity</label>
     <label class="check-row"><input type="checkbox" id="loadUnloadOverflow" onchange="syncLoadUnloadOverflow()"> Load/Unload Overflow</label>
     <div id="loadUnloadOverflowOpts" class="indent" style="display:none;margin-top:2px;margin-bottom:4px;">
-      <label class="field-label" style="font-size:14px;">Number of AMS Trucks</label>
-      <input type="number" id="overflowTrucks" placeholder="e.g. 2" min="1" oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+      <label class="field-label" style="font-size:9px;">Number of AMS Trucks</label>
+      <input type="number" id="overflowTrucks" placeholder="e.g. 2" min="1" oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
     </div>
     <label class="check-row"><input type="checkbox" id="shuttle" onchange="render()"> Shuttle (Overflow Trip)</label>
     <label class="check-row"><input type="checkbox" id="truck30ft"> 30-Foot Truck</label>
@@ -258,18 +258,18 @@
     </div>
     <label class="check-row"><input type="checkbox" id="specialtyItems" onchange="syncSpecialtyItems()"> Specialty Items</label>
     <div id="specialtyOpts" style="display:none;margin-top:8px;margin-bottom:12px;">
-      <label class="field-label" style="font-size:14px;">Item Type</label>
-      <select id="specialtyType" onchange="syncSpecialtyOther();render()" style="font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;width:100%;font-family:inherit;">
+      <label class="field-label" style="font-size:9px;">Item Type</label>
+      <select id="specialtyType" onchange="syncSpecialtyOther();render()" style="font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;width:100%;font-family:inherit;">
         <option>Piano</option>
         <option>Gun Safe</option>
         <option>Pool Table</option>
         <option>Other</option>
       </select>
       <div id="specialtyOtherInput" style="display:none;margin-top:6px;">
-        <input type="text" id="specialtyOtherText" placeholder="Specify item..." oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+        <input type="text" id="specialtyOtherText" placeholder="Specify item..." oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
-      <label class="field-label" style="font-size:14px;margin-top:10px;">Floor</label>
-      <select id="specialtyFloor" onchange="render()" style="font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;width:100%;font-family:inherit;">
+      <label class="field-label" style="font-size:9px;margin-top:6px;">Floor</label>
+      <select id="specialtyFloor" onchange="render()" style="font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;width:100%;font-family:inherit;">
         <option>1st Floor</option>
         <option>2nd Floor</option>
         <option>3rd Floor</option>
@@ -277,39 +277,39 @@
         <option>Basement</option>
       </select>
       <div id="specialtyWeightInput" style="display:none;margin-top:8px;">
-        <label class="field-label" style="font-size:14px;">Weight (lbs)</label>
-        <input type="text" id="specialtyWeight" placeholder="e.g. 800" oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+        <label class="field-label" style="font-size:9px;">Weight (lbs)</label>
+        <input type="text" id="specialtyWeight" placeholder="e.g. 800" oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
     </div>
     <label class="check-row"><input type="checkbox" id="coi"> COI Required</label>
     <label class="check-row"><input type="checkbox" id="applianceSwap" onchange="syncApplianceSwap()"> Appliance Swap</label>
     <div id="applianceSwapOpts" class="indent" style="display:none;margin-top:2px;margin-bottom:4px;">
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="appFridge" onchange="render()"> Fridge</label>
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="appWasherDryer" onchange="render()"> Washer and Dryer</label>
-      <label class="check-row" style="font-size:14px;"><input type="checkbox" id="appOther" onchange="syncApplianceOther()"> Other</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="appFridge" onchange="render()"> Fridge</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="appWasherDryer" onchange="render()"> Washer and Dryer</label>
+      <label class="check-row" style="font-size:9px;"><input type="checkbox" id="appOther" onchange="syncApplianceOther()"> Other</label>
       <div id="appOtherOpts" style="display:none;margin-top:3px;">
-        <input type="text" id="appOtherText" placeholder="Describe appliance..." oninput="render()" style="width:100%;font-size:14px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;font-family:inherit;">
+        <input type="text" id="appOtherText" placeholder="Describe appliance..." oninput="render()" style="width:100%;font-size:9px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
     </div>
     <label class="check-row"><input type="checkbox" id="parking" onchange="syncParking()"> Parking</label>
     <div id="parkingOpts" style="display:none;margin-top:8px;margin-bottom:12px;">
-      <label class="field-label" style="font-size:14px;">Origin Parking</label>
-      <select id="parkingOrigin" onchange="syncParkingOriginOther();render()" style="font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;width:100%;font-family:inherit;">
+      <label class="field-label" style="font-size:9px;">Origin Parking</label>
+      <select id="parkingOrigin" onchange="syncParkingOriginOther();render()" style="font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;width:100%;font-family:inherit;">
         <option>Driveway</option>
         <option>Street</option>
         <option>Other</option>
       </select>
       <div id="parkingOriginOtherInput" style="display:none;margin-top:6px;">
-        <input type="text" id="parkingOriginText" placeholder="Specify parking..." oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+        <input type="text" id="parkingOriginText" placeholder="Specify parking..." oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
-      <label class="field-label" style="font-size:14px;margin-top:12px;">Destination Parking</label>
-      <select id="parkingDestination" onchange="syncParkingDestinationOther();render()" style="font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:8px;width:100%;font-family:inherit;">
+      <label class="field-label" style="font-size:9px;margin-top:8px;">Destination Parking</label>
+      <select id="parkingDestination" onchange="syncParkingDestinationOther();render()" style="font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;width:100%;font-family:inherit;">
         <option>Driveway</option>
         <option>Street</option>
         <option>Other</option>
       </select>
       <div id="parkingDestinationOtherInput" style="display:none;margin-top:6px;">
-        <input type="text" id="parkingDestinationText" placeholder="Specify parking..." oninput="render()" style="width:100%;font-size:15px;padding:10px 12px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
+        <input type="text" id="parkingDestinationText" placeholder="Specify parking..." oninput="render()" style="width:100%;font-size:10px;padding:6px 8px;border:1.5px solid #c8e6c9;border-radius:5px;font-family:inherit;">
       </div>
     </div>
 
@@ -333,7 +333,7 @@
 
     <!-- Sticky bottom button -->
     <div style="margin-top:18px;padding-top:14px;border-top:1.5px solid #c8e6c9;">
-      <button onclick="switchTab('offices')" style="width:100%;background:#111;color:#7cb87f;border:1.5px solid #2e7d32;border-radius:8px;padding:14px 12px;font-size:14px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:Georgia,serif;text-align:center;">
+      <button onclick="switchTab('offices')" style="width:100%;background:#111;color:#7cb87f;border:1.5px solid #2e7d32;border-radius:5px;padding:9px 8px;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;font-family:Georgia,serif;text-align:center;">
         🏢 AMS Locations &amp; Contacts
       </button>
     </div>
@@ -1368,15 +1368,15 @@ function downloadCommission(key) {
 
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px;">
               <div>
-                <label style="font-size:13px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Move Date</label>
+                <label style="font-size:9px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Move Date</label>
                 <input type="date" id="maDate" onchange="maCalcUpdate()" style="width:100%;font-size:13px;padding:6px 10px;border:2px solid #c8e6c9;border-radius:6px;box-sizing:border-box;font-family:Georgia,serif;">
               </div>
               <div>
-                <label style="font-size:13px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Number of Men</label>
+                <label style="font-size:9px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Number of Men</label>
                 <input type="number" id="maCrewNum" min="2" max="6" placeholder="e.g. 3" oninput="maCalcUpdate()" style="width:100%;font-size:13px;padding:6px 10px;border:2px solid #c8e6c9;border-radius:6px;box-sizing:border-box;">
               </div>
               <div>
-                <label style="font-size:13px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Number of Trucks</label>
+                <label style="font-size:9px;font-weight:700;color:#444;display:block;margin-bottom:4px;">Number of Trucks</label>
                 <input type="number" id="maTruckNum" min="1" max="3" placeholder="e.g. 1" oninput="maCalcUpdate()" style="width:100%;font-size:13px;padding:6px 10px;border:2px solid #c8e6c9;border-radius:6px;box-sizing:border-box;">
               </div>
             </div>
@@ -3182,11 +3182,11 @@ function addStorageUnit() {
   div.innerHTML = `
     <div style="font-size:11px;font-weight:700;color:#2e7d32;margin-bottom:6px;">Unit ${i}</div>
     <div class="field" style="margin-bottom:6px;">
-      <label class="field-label" style="font-size:14px;">Size</label>
+      <label class="field-label" style="font-size:9px;">Size</label>
       <input type="text" id="storageSize-${i}" placeholder="e.g. 10x20" oninput="render();regUpdate();" style="font-size:12px;padding:4px 8px;">
     </div>
     <div class="field" style="margin-bottom:0;">
-      <label class="field-label" style="font-size:14px;">% Full</label>
+      <label class="field-label" style="font-size:9px;">% Full</label>
       <input type="number" id="storagePct-${i}" placeholder="e.g. 75" min="0" max="100" oninput="render();regUpdate();" style="font-size:12px;padding:4px 8px;">
     </div>`;
   list.appendChild(div);
